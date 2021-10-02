@@ -24,7 +24,7 @@ def maze(h,w):
     result[x][y] = 0
     used.append((i,j))
   return result
-r = maze(45,35)
+r = maze(35,25)
 img = []
 n = 20
 for i in r:

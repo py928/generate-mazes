@@ -1,4 +1,5 @@
 
+
 '''
 email : python928@gmail.com
 facebook : https://www.facebook.com/python928
@@ -26,14 +27,12 @@ def maze(h,w):
   return result
 r = maze(35,25)
 img = []
-n = 20
 for i in r:
   row = []
   for j in i:
-    row.extend([j]*n)
-  img.extend([row]*n)
-height = len(img)
-width = len(img[0])
-w = png.Writer(width, height, bitdepth=1)
-f = open('maze.png', 'wb')
-w.write(f, img)
+    row.extend([j]*10)
+  img.extend([row]*10)
+
+with open('maze.png', 'wb') as f:
+  w = png.Writer(len(img[0]), len(img), bitdepth=1)
+  w.write(f, img)

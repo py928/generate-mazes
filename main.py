@@ -28,6 +28,8 @@ def maze(h,w):
       continue
     used.append((i,j))
     matrix[x][y] = 1
+  matrix[0][-2] = 1
+  matrix[-2][0] = 1
   img = []
   for values in matrix:
     row = []
@@ -37,4 +39,5 @@ def maze(h,w):
   with open('maze.png', 'wb') as f:
     w = png.Writer(len(img[0]), len(img), bitdepth=1)
     w.write(f, img)
-maze(35,30)
+maze(20,30)
+

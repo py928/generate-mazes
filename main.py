@@ -17,7 +17,8 @@ def maze(h,w):
   used = []
   while 1:
     matrix[i][j] = 1
-    for x,y,i,j in {(i+1,j,i+2,j),(i-1,j,i-2,j),(i,j+1,i,j+2),(i,j-1,i,j-2)}:
+    l = [(i+1,j,i+2,j),(i-1,j,i-2,j),(i,j+1,i,j+2),(i,j-1,i,j-2)]
+    for x,y,i,j in [l.pop(random.randint(0,3-i)) for i in range(4)]:
       if (i,j) in points:
         points.remove((i,j))
         break
